@@ -99,17 +99,17 @@ public class Homework2 {
         WebElement viewAllOrders = driver.findElement(By.linkText("View all orders"));
         String actualLink = viewAllOrders.getAttribute("href").trim();
         String expectedLink = "http://secure.smartbearsoftware.com/samples/TestComplete11/WebOrders/Default.aspx";
-        System.out.println(actualLink.equals(expectedLink)?"\"View all orders\" href values are equal --> TRUE":
+        System.out.println(actualLink.equals(expectedLink) ? "\"View all orders\" href values are equal --> TRUE" :
                 "\"View all orders\" href values are equal --> FALSE");
         WebElement viewAllProducts = driver.findElement(By.linkText("View all products"));
         String actualLink2 = viewAllProducts.getAttribute("href").trim();
         String expectedLink2 = "http://secure.smartbearsoftware.com/samples/TestComplete11/WebOrders/Products.aspx";
-        System.out.println(actualLink2.equals(expectedLink2)?"\"View all products\" href values are equal --> TRUE":
+        System.out.println(actualLink2.equals(expectedLink2) ? "\"View all products\" href values are equal --> TRUE" :
                 "\"View all products\" href values are equal --> FALSE");
         WebElement order = driver.findElement(By.linkText("Order"));
         String actualLink3 = order.getAttribute("href").trim();
         String expectedLink3 = "http://secure.smartbearsoftware.com/samples/TestComplete11/WebOrders/Process.aspx";
-        System.out.println(actualLink3.equals(expectedLink3)?"\"Order\" href values are equal --> TRUE":
+        System.out.println(actualLink3.equals(expectedLink3) ? "\"Order\" href values are equal --> TRUE" :
                 "\"Order\" href values are equal --> FALSE");
         driver.quit();
     }
@@ -156,7 +156,7 @@ public class Homework2 {
         WebElement processButton = driver.findElement(By.cssSelector(".btn_light"));
         processButton.click();
         WebElement message = driver.findElement(By.xpath("//strong[contains(text(),'New order')]"));
-        System.out.println(message.isDisplayed()?"\"New order has been successfully added.\" is displayed --> TRUE" :
+        System.out.println(message.isDisplayed() ? "\"New order has been successfully added.\" is displayed --> TRUE" :
                 "\"New order has been successfully added.\" is displayed --> FALSE");
         WebElement viewAllOrders = driver.findElement(By.linkText("View all orders"));
         viewAllOrders.click();
@@ -165,14 +165,14 @@ public class Homework2 {
         List<String> expectedInputs = Arrays.asList("ScreenSaver", "5", "CodeFish IT School", "2200 E devon", "Des Plaines",
                 "Illinois", "60018", "444993876233", "03/24", "06/01/2023", "MasterCard");
         boolean inputMatch = false;
-        for(int i = 1; i < orderList.size()-1; i++){
-            for(String input : expectedInputs){
-                if(orderList.get(i).getText().trim().equals(input)){
+        for (int i = 1; i < orderList.size() - 1; i++) {
+            for (String input : expectedInputs) {
+                if (orderList.get(i).getText().trim().equals(input)) {
                     inputMatch = true;
                     break;
-                }else inputMatch = false;
+                } else inputMatch = false;
             }
-            if(inputMatch == false) break;
+            if (inputMatch == false) break;
         }
         WebElement newOrder = driver.findElement(By.xpath("//td[.='CodeFish IT School']"));
         System.out.println(newOrder.isDisplayed() ? "New order is added --> TRUE" : "New order is added --> FALSE");
