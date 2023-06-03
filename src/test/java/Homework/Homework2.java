@@ -163,7 +163,7 @@ public class Homework2 {
         List<WebElement> orderList = driver.findElements(By.xpath("//table[@id='ctl00_MainContent_orderGrid']//tbody//tr[2]//td"));
         Thread.sleep(1000);
         List<String> expectedInputs = Arrays.asList("ScreenSaver", "5", "CodeFish IT School", "2200 E devon", "Des Plaines",
-                "Illinois", "60018", "444993876233", "03/24", "06/01/2023", "MasterCard");
+                "Illinois", "60018", "444993876233", "03/24", "06/03/2023", "MasterCard");
         boolean inputMatch = false;
         for (int i = 1; i < orderList.size() - 1; i++) {
             for (String input : expectedInputs) {
